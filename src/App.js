@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import ArticleList from './components/ArticleList/ArticleList'
+import Routes from './Routes'
 
 class App extends Component {
     render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Welcome express cms</h2>
-        </div>
-        <ArticleList/>
+        <Routes />
       </div>
     );
   }

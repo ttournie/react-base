@@ -19,3 +19,13 @@ export function saveArticles(article) {
         })
     }
 }
+
+// Get all the articles.
+export function getArticle(articleId) {
+    return function(dispatch) {
+        axios.get("http://localhost:3001/api/articles/" + articleId)
+        .then(res => {
+          dispatch({type: "GET_ARTICLE", payload: res.data})
+        })
+    }
+}

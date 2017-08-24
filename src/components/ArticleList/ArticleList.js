@@ -30,12 +30,8 @@ class ArticleList extends React.Component {
         <h2>Article List</h2>
         {articles.length > 0 ?
           articles.map((article, i) => {
-             return <Article
-              key={i}
-              title={article.title}
-              body={article.body}
-              author={article.author}
-             />
+            console.log(article['_id'])
+            return <a href={'/article/' + article['_id']}> {article.title} </a>
           })
           :
           <div>Loading article</div>

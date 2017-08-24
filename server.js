@@ -65,6 +65,29 @@ router.route("/articles").post((req, res) => {
   })
 })
 
+router.route("/articles/:article_id").get((req, res) => {
+   Article.findById(req.params.article_id, (err, article) => {
+     if (err)
+     res.send(err);
+     res.json(article);
+   });
+})
+
+router.route("/articles/:article_id").put((req, res) => {
+   Article.findById(req.params.article_id, (err, article) => {
+     if (err)
+     res.send(err);
+     (req.body.author) ? article.author = req.body.author : null;
+     (req.body.title) ? article.title = req.body.title : null;
+     (req.body.text) ? article.text = req.body.text : null;
+     article.save(err => {
+       if (err)
+       res.send(err);
+       res.json({ message: "Comment has been updated" });
+     })
+   });
+})
+
 app.get("/", (req, res) => {
   res.send('start page')
 });

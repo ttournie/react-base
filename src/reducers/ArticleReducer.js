@@ -6,5 +6,11 @@ export default function articles(state = {articles: []}, action) {
             articles: action.payload,
         }
     }
+    if (action.type === "GET_ARTICLE") {
+        return {
+            ...state,
+            articles: action.payload,
+        }
+    }
     return state;
 }
