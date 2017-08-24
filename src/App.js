@@ -7,9 +7,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome to React</h2>
-          <Wysiwyg/>
+          <h2>Welcome express cms</h2>
         </div>
+        <Wysiwyg/>
       </div>
     );
   }
