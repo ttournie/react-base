@@ -42,6 +42,7 @@ mongoose.connect(mongoDB, (err, db) => {
 //Use our router configuration when we call /api
 app.use("/api", router);
 
+// Article API actions.
 router.route("/articles").get((err, res) => {
    Article.find((err, articles) => {
    if (err)
@@ -68,7 +69,6 @@ app.get("/", (req, res) => {
   res.send('start page')
 });
 
-
-
+// Starting server.
 app.listen(port);
 console.log("Server started");

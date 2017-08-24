@@ -10,14 +10,12 @@ class Wysiwyg extends React.Component {
   constructor(props) {
     super(props);
     const editorState = EditorState.createWithContent(convertFromRaw(content));
-    console.log(editorState)
     this.state = {
       editorState,
     }
   }
 
   onEditorStateChange: Function = (editorState) => {
-    console.log(editorState)
     this.setState({
       editorState,
     });
