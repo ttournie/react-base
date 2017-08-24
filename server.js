@@ -79,11 +79,11 @@ router.route("/articles/:article_id").put((req, res) => {
      res.send(err);
      (req.body.author) ? article.author = req.body.author : null;
      (req.body.title) ? article.title = req.body.title : null;
-     (req.body.text) ? article.text = req.body.text : null;
+     (req.body.text) ? article.body = req.body.text : null;
+     console.log(article)
      article.save(err => {
        if (err)
        res.send(err);
-       res.json({ message: "Comment has been updated" });
      })
    });
 })
